@@ -12,7 +12,7 @@ maintainer:          ex-hackage@mjoldfield.com
 -- copyright:           
 category:            Graphics
 build-type:          Simple
--- extra-source-files:  
+extra-source-files:  README.md
 cabal-version:       >=1.10
 
 library
