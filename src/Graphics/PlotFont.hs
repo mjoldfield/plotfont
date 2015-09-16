@@ -18,7 +18,7 @@
 -- == License discussion
 --
 -- My code is licensed under the GPL version 2 or later
--- (see http://www.gnu.org/copyleft/gpl.html)
+-- see http://www.gnu.org/copyleft/gpl.html
 --
 -- The data in canvasText and fallbackGlyph come from Jim Studt's
 -- canvastext.js: http://jim.studt.net/canvastext/ which he placed
