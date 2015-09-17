@@ -14,6 +14,26 @@
 -- with the coordinates afterwards, but not if you just want to render some
 -- text.
 --
+-- == Example
+--
+-- Here is an example using 'Diagrams' to generate a SVG file:
+--
+-- @
+-- import qualified Graphics.PlotFont as PF
+-- 
+-- import Diagrams.Prelude
+-- import Diagrams.Backend.SVG
+-- 
+-- strokes :: [[(Double,Double)]]    
+-- strokes = PF.render' PF.canvastextFont "Hello World!"
+-- 
+-- toDiag :: [[(Double,Double)]] -> Diagram SVG
+-- toDiag = extrudeLeft 20 . mconcat . map (fromVertices . map p2)
+-- 
+-- main :: IO ()         
+-- main = renderSVG "hello.svg" (mkSizeSpec2D (Just 800) (Just 200)) $
+--           toDiag strokes # lw 3
+-- @
 --
 -- == License discussion
 --

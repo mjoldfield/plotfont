@@ -7,6 +7,27 @@ some cruder fonts which had a simpler representation: a relatively small
 number of straight lines which could easily be plotted by a machine, or
 perhaps a person.
 
+# Example
+
+Here is an example using diagrams to generate a SVG file:
+
+```haskell
+import qualified Graphics.PlotFont as PF
+
+import Diagrams.Prelude
+import Diagrams.Backend.SVG
+
+strokes :: [[(Double,Double)]]    
+strokes = PF.render' PF.canvastextFont "Hello World!"
+
+toDiag :: [[(Double,Double)]] -> Diagram SVG
+toDiag = extrudeLeft 20 . mconcat . map (fromVertices . map p2)
+
+main :: IO ()         
+main = renderSVG "hello.svg" (mkSizeSpec2D (Just 800) (Just 200)) $
+          toDiag strokes # lw 3
+```
+
 # Licenses
 
 The code written by me is licensed under the GPL, version 2 or later.
